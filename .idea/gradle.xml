@@ -15,6 +15,16 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex03" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/6.7.1/libexec" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex03" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/ex2" />
         <option name="gradleHome" value="/usr/local/Cellar/gradle/6.7.1/libexec" />
         <option name="gradleJvm" value="14" />
