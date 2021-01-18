@@ -86,8 +86,8 @@ public class GuestbookContorller {
 
         service.modify(dto);
 
-        redirectAttributes.addFlashAttribute("page", requestDTO.getPage());
-        redirectAttributes.addFlashAttribute("gno", dto.getGno());
+        redirectAttributes.addAttribute("page", requestDTO.getPage());
+        redirectAttributes.addAttribute("gno", dto.getGno());
 
         return "redirect:/guestbook/read";
     }
