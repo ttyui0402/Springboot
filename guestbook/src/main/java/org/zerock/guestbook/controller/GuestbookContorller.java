@@ -87,6 +87,8 @@ public class GuestbookContorller {
         service.modify(dto);
 
         redirectAttributes.addAttribute("page", requestDTO.getPage());
+        redirectAttributes.addAttribute("type", requestDTO.getPage());
+        redirectAttributes.addAttribute("keyword", requestDTO.getPage());
         redirectAttributes.addAttribute("gno", dto.getGno());
 
         return "redirect:/guestbook/read";
