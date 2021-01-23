@@ -12,6 +12,10 @@ public interface BoardService {
 
     PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO);
 
+    void removeWithReplies(Long bno);   //  삭제 기능
+
+    void modify(BoardDTO boardDTO);     // 수정 기능
+
     BoardDTO get(Long bno);
 
     default Board dtoToEntity(BoardDTO dto) {
