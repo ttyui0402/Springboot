@@ -28,32 +28,32 @@ public class SearchBoardRepositoryImpl extends QuerydslRepositorySupport impleme
         super(Board.class);
     }
 
-//    @Override
-//    public Board search1() {
-//
-//        log.info("search1................................");
-//
-//        QBoard board = QBoard.board;
-//        QReply reply = QReply.reply;
-//        QMember member = QMember.member;
-//
-//        JPQLQuery<Board> jpqlQuery = from(board);
-//        jpqlQuery.leftJoin(member).on(board.writer.eq(member));
-//        jpqlQuery.leftJoin(reply).on(reply.board.eq(board));
-//
-//        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member.email, reply.count());
-//        tuple.groupBy(board);
-//
-//        log.info("------------------------------------------");
-//        log.info(tuple);
-//        log.info("------------------------------------------");
-//
-//        List<Tuple> result = tuple.fetch();
-//
-//        log.info(result);
-//
-//        return  null;
-//    }
+    @Override
+    public Board search1() {
+
+        log.info("search1................................");
+
+        QBoard board = QBoard.board;
+        QReply reply = QReply.reply;
+        QMember member = QMember.member;
+
+        JPQLQuery<Board> jpqlQuery = from(board);
+        jpqlQuery.leftJoin(member).on(board.writer.eq(member));
+        jpqlQuery.leftJoin(reply).on(reply.board.eq(board));
+
+        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member.email, reply.count());
+        tuple.groupBy(board);
+
+        log.info("------------------------------------------");
+        log.info(tuple);
+        log.info("------------------------------------------");
+
+        List<Tuple> result = tuple.fetch();
+
+        log.info(result);
+
+        return  null;
+    }
 
 
 
@@ -72,7 +72,7 @@ public class SearchBoardRepositoryImpl extends QuerydslRepositorySupport impleme
 
         // select b, w, count(r) from Board b
         // left join b.writer w left join Reply r ON r.board = b
-        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member.email, reply.count());
+        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member, reply.count());
 
         BooleanBuilder booleanBuilder = new BooleanBuilder();
         BooleanExpression expression = board.bno.gt(0L);
