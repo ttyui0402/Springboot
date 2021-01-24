@@ -55,6 +55,16 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mreview" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/6.7.1/libexec" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/mreview" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
