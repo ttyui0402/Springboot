@@ -9,6 +9,7 @@ import org.zerock.club.entity.ClubMember;
 import org.zerock.club.entity.ClubMemberRole;
 import org.zerock.club.repository.ClubMemberRepository;
 
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
@@ -30,7 +31,9 @@ public class ClubMemberTests {
 
         IntStream.rangeClosed(1, 100).forEach(i -> {
 
-            ClubMember clubMember = ClubMember.builder().email("user" + i + "@ttyui.com").name("사용자" + i).fromSocial(false).password(passwordEncoder.encode("1111"))
+            ClubMember clubMember = ClubMember.builder().email("user" + i + "@ttyui.com").name("사용자" + i).fromSocial(false)
+                    .roleSet(new HashSet<ClubMemberRole>())
+                    .password(passwordEncoder.encode("1111"))
                     .build();
 
             // default role
